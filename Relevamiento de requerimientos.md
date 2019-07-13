@@ -1,28 +1,3 @@
-<style>
-
-h1{
-    background: lightblue;
-    border-radius: 10px;
-    padding: 13px;
-    border: 1px solid black;
-    box-shadow: 3px 3px 2px grey;
-}
-
-
-h2{
-    background: lightblue;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-p{
-    text-indent: 10px;
-    padding: 15px;
-    text-align: justify;
-}
-
-</style>
-
 <h1>Relevematiento de requerimientos</h1>
 
 <p>Para el relevamiento de requerimientos se realizaron reuniones con ministerio de comunidades, ministerio de logistica y el parroco Juan Pablo. Queda pendiente hacer una encuesta para consultar requerimientos del resto de los integrantes de la parroquia.</p>
