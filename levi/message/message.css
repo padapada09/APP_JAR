@@ -1,0 +1,64 @@
+.messageBox{
+    position: fixed;
+    top: 0vh;
+    left: 0vw;
+    width: 100vw;
+    height: auto;
+    background: white;
+    box-shadow: 2px 2px 5px grey;
+    animation: appear 0.7s;
+    z-index: 11;
+}
+
+.messageBox header{
+    width: 90%;
+    height: auto;
+    padding: 5%;
+    font-size: 3vh;
+}
+
+.messageBox p{
+    margin: 0;
+    width: 90%;
+    height: auto;
+    padding: 5%;
+    font-size: 1vh;
+}
+
+.messageBox input{
+    all: unset;
+    border: 0.5vw solid darkblue;
+    width: 90%;
+    margin: 5%;
+    border-radius: 4px;
+    text-indent: 3%;
+    box-sizing: border-box;
+    font-size: 3vh;
+}
+
+.messageBox button{
+    all: unset;
+    position: relative;
+    margin: 5%;
+    height: 5vh;
+    width: 30%;
+    float: right;
+    border-radius: 15px;
+    background: rgb(78, 149, 255);
+
+}
+
+.messageBox button:last-child{
+    float: left;
+    background: rgb(224, 37, 37);
+}
+
+@keyframes appear {
+    from {top: -50vh;}
+    to {top: 0vh;}
+}
+
+@keyframes disappear {
+    from {top: 0vh;}
+    to {top: -50vh;}
+}

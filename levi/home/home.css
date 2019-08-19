@@ -1,0 +1,76 @@
+.poster{
+    height: auto;
+    width:100vw;
+    perspective: 100px;
+}
+
+.poster-post{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.poster-post-front{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 40vh;
+    margin: 0%;
+    padding: 0%;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.poster-post-back{
+    position: absolute;
+    height: 100%;
+    top: 100%;
+    width: 100%;
+    overflow: scroll;
+    transition: top 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.poster-post-footer{
+    position: relative;
+    display: flex;
+    height: auto;
+    width: 100%;
+    background: white;
+}
+
+.poster-post-footer-button{
+    height: 4vh;
+    padding: 0.7vh;
+    margin: 0.7vh;
+    border-radius: 20%;
+    transition: background 0.1s ease-in-out;
+}
+
+.poster-post-footer-button:active{
+    background: rgba(110, 110, 110, 0.336);
+    transform: translateY(2px);
+}
+
+.poster-post-title{
+    width: 90%;
+    margin: 5vw;
+    height: auto;
+    font-size: 7vh;
+}
+
+.poster-post-body{
+    width: 90%;
+    margin: 5vw;
+    font-size: 3vh;
+}
+
+.poster-post-comment{
+    width: 86%;
+    margin: 5vw;
+    font-size: 2vh;
+    border-radius: 5px;
+    color: grey;
+    background: rgba(255,255,255,0.7);
+    padding: 2vw;
+}
