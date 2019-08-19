@@ -45,7 +45,7 @@ function message(options) {
                 if (typeof options.input !== "undefined" && options.input == true) {
                     userTxtResponse = input.value;
                 }
-                messageBox.style.animation = "disappear 0.7s";
+                messageBox.style.animation = "disappear 0.4s";
                 messageBox.style.top = "-50vh";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 resolve(userTxtResponse);
@@ -54,7 +54,7 @@ function message(options) {
 
         if (typeof options.okButton !== "undefined" && options.okButton == true){
             cancelButton.addEventListener("click", ()=> {
-                messageBox.style.animation = "disappear 0.7s";
+                messageBox.style.animation = "disappear 0.4s";
                 messageBox.style.top = "-50vh";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 reject(false);
@@ -63,7 +63,7 @@ function message(options) {
 
         if (typeof options.do !== "undefined"){
             options.do().then((response)=>{
-                messageBox.style.animation = "disappear 0.7s";
+                messageBox.style.animation = "disappear 0.4s";
                 messageBox.style.top = "-50vh";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 resolve(response);

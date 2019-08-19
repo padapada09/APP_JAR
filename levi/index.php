@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="message/message.css">
     <link rel="stylesheet" type="text/css" href="config.css">
+    <link rel="stylesheet" type="text/css" href="calendar/calendar.css">
     <link rel="manifest" href="manifest.json">
     <title>Levi</title>
 </head>
@@ -18,7 +19,7 @@
     ?>
     <div class="screen">
         <?php
-            include "home/home.php";
+            include "repository/repository.php";
         ?>
     </div>
     <script src="navBar/navBar.js"></script>

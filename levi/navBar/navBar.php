@@ -8,19 +8,19 @@
             </div>
     </div>
     <div class="navBar-menu">
-        <div class="navBar-menu-block" onclick="navigateTo({name: 'Levi'})">
+        <div class="navBar-menu-block" onclick="navigateTo({name: 'Levi', url: 'home/home.php'})">
             <img src="navBar/church.svg" class="navBar-menu-block-bubble">
         </div>
-        <div class="navBar-menu-block" onclick="navigateTo({name: 'Acordes'})">
+        <div class="navBar-menu-block" onclick="navigateTo({name: 'Acordes', url: 'songbook/songbook.php'})">
             <img src="navBar/chords.svg" class="navBar-menu-block-bubble">
         </div>
-        <div class="navBar-menu-block" onclick="navigateTo({name: 'Calendario'})">
+        <div class="navBar-menu-block" onclick="navigateTo({name: 'Calendario', url: 'calendar/calendar.php'})">
             <img src="navBar/calendar.svg" class="navBar-menu-block-bubble">
         </div>
-        <div class="navBar-menu-block" onclick="navigateTo({name: 'Comunidad'})">
+        <div class="navBar-menu-block" onclick="navigateTo({name: 'Comunidad', url: 'comunity/comunity.php'})">
             <img src="navBar/comunity.svg" class="navBar-menu-block-bubble">
         </div>
-        <div class="navBar-menu-block" onclick="navigateTo({name: 'Repositorio'})">
+        <div class="navBar-menu-block" onclick="navigateTo({name: 'Repositorio', url: 'repository/repository.php'})">
             <img src="navBar/repository.svg" class="navBar-menu-block-bubble">
         </div>
     </div>

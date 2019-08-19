@@ -43,10 +43,9 @@
     padding: 1vh; 
     width: 50%;
     float: right;
-    border-top: 0.2vw solid darkblue;
     box-sizing: border-box;
     text-align: center;
-    background: rgba(11, 12, 97, 0.397);
+    background: rgba(210, 210, 255, 0.548);
 }
 
 .messageBox button:active{
@@ -55,7 +54,6 @@
 
 .messageBox button:last-child{
     float: left;
-    border-right: 0.2vw solid darkblue;
 }
 
 @keyframes appear {
