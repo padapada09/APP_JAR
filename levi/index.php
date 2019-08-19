@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" type="text/css" href="message/message.css">
     <link rel="stylesheet" type="text/css" href="config.css">
+    <link rel="manifest" href="manifest.json">
     <title>Levi</title>
 </head>
 <body>

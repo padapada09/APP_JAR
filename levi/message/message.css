@@ -39,18 +39,23 @@
 .messageBox button{
     all: unset;
     position: relative;
-    margin: 5%;
-    height: 5vh;
-    width: 30%;
+    font-size: 3vh;
+    padding: 1vh; 
+    width: 50%;
     float: right;
-    border-radius: 15px;
-    background: rgb(78, 149, 255);
+    border-top: 0.2vw solid darkblue;
+    box-sizing: border-box;
+    text-align: center;
+    background: rgba(11, 12, 97, 0.397);
+}
 
+.messageBox button:active{
+    background: rgba(139, 146, 238, 0.852);
 }
 
 .messageBox button:last-child{
     float: left;
-    background: rgb(224, 37, 37);
+    border-right: 0.2vw solid darkblue;
 }
 
 @keyframes appear {

@@ -48,10 +48,14 @@
     left: calc(calc(100% - 7vh) / 2);
     height: 7vh;
     width: 7vh;
-    background: lightgrey;
+    background: white;
     border-radius: 50%;
-    transition: top 0.1s ease-in-out;
-    box-shadow: 1px 1px 6px rgba(5, 5, 68, 0.514);
+    transition: all 0.1s ease-in-out;
+    /* box-shadow: 1px 1px 6px rgba(5, 5, 68, 0.514); */
+}
+
+.navBar-menu-block-bubble:active{
+    background: lightgrey;
 }
 
 .navBar-sandwich{

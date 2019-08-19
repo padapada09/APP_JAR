@@ -9,6 +9,7 @@ function alterMenu(){
                 bubbles[i].style.top = "0vh";
             }, 30*i);
         }
+        document.querySelector(".screen").ontouchstart = "";
     }else{
         sandwich.style.transform = "rotate(90deg)";
         for (let i = 0; i < bubbles.length; i++){
@@ -16,5 +17,6 @@ function alterMenu(){
                 bubbles[i].style.top = "11vh";
             }, 30*i);
         }
+        document.querySelector(".screen").ontouchstart = function () { alterMenu(); };
     }
 }

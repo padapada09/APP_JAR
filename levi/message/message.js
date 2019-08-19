@@ -4,7 +4,7 @@ function message(options) {
         //Creo los elementos
         let messageBox = document.createElement("div");
         let messageInterfaze = [];
-        let title, message, input;
+        let title, message, input, okButton, cancelButton;
         if (typeof options.titleTxt !== "undefined") {
             title = document.createElement("header");
             title.innerHTML = options.titleTxt;
@@ -19,9 +19,16 @@ function message(options) {
             input = document.createElement("input");
             messageInterfaze.push(input);
         }
-        let okButton = document.createElement("button");
-        let cancelButton = document.createElement("button");
-        messageInterfaze.push(okButton, cancelButton);
+        if (typeof options.okButton !== "undefined" && options.okButton == true){
+            okButton = document.createElement("button");
+            okButton.innerHTML = "Aceptar";
+            messageInterfaze.push(okButton);
+        }
+        if (typeof options.cancelButton !== "undefined" && options.cancelButton == true){
+            cancelButton = document.createElement("button");
+            cancelButton.innerHTML = "Cancelar";
+            messageInterfaze.push(cancelButton);
+        }
         
         //Los conecto entre sí, y con el documento
         messageInterfaze.forEach(element => {
@@ -32,23 +39,37 @@ function message(options) {
         //Le asigno la clase
         messageBox.className = "messageBox";
 
-        okButton.addEventListener("click",() => {
-            let userTxtResponse = true;
-            if (typeof options.input !== "undefined" && options.input == true) {
-                userTxtResponse = input.value;
-            }
-            messageBox.style.animation = "disappear 0.7s";
-            messageBox.style.top = "-50vh";
-            setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
-            resolve(userTxtResponse);
-        });
+        if (typeof options.okButton !== "undefined" && options.okButton == true){
+            okButton.addEventListener("click",() => {
+                let userTxtResponse = true;
+                if (typeof options.input !== "undefined" && options.input == true) {
+                    userTxtResponse = input.value;
+                }
+                messageBox.style.animation = "disappear 0.7s";
+                messageBox.style.top = "-50vh";
+                setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
+                resolve(userTxtResponse);
+            });
+        }
 
-        cancelButton.addEventListener("click", ()=> {
-            messageBox.style.animation = "disappear 0.7s";
-            messageBox.style.top = "-50vh";
-            setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
-            reject(false);
-        })
+        if (typeof options.okButton !== "undefined" && options.okButton == true){
+            cancelButton.addEventListener("click", ()=> {
+                messageBox.style.animation = "disappear 0.7s";
+                messageBox.style.top = "-50vh";
+                setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
+                reject(false);
+            });
+        }
 
+        if (typeof options.do !== "undefined"){
+            options.do().then((response)=>{
+                messageBox.style.animation = "disappear 0.7s";
+                messageBox.style.top = "-50vh";
+                setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
+                resolve(response);
+            }).catch((response)=>{
+                console.log("Hubo un problema: " + response);
+            });
+        }
     });
 }

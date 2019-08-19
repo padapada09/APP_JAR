@@ -49,7 +49,13 @@ function sharePost(){
 }
 
 function comment(){
-    message({titleTxt: "Escribe un comentario", input: true}).then((response)=>{
+    let options = {
+        titleTxt: "Escribe un comentario",
+        input: true,
+        okButton: true,
+        cancelButton: true
+    }
+    message(options).then((response)=>{
         console.log(response);
     }).catch((response)=>{
         console.log(response);
