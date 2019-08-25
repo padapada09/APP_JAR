@@ -49,3 +49,12 @@ Nuestra formación como joven JAR abarca todos los aspectos de nuestra vida. Por
         <img src="home/comment.png" onclick="comment()" class="poster-post-footer-button">
     </div>
 </div>
+
+<script>
+    options = {
+        'titleTxt': 'Hello ' + <?php echo "'".$user['Name']."'" ?>,
+        'messageTxt': 'Your email is: ' + <?php echo "'".$user['Mail']."'" ?>,
+        'wait' : 6000
+    };
+    message(options);
+</script>

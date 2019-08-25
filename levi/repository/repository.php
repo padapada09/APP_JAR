@@ -1,6 +1,6 @@
 <?php
 $archivos=[];
-$path = "repository\Instructivos";
+$path = "Instructivos";
   if ($handle = opendir($path)) {
     while (false !== ($file = readdir($handle))) {
         if ('.' === $file) continue;

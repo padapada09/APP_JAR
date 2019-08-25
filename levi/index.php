@@ -1,3 +1,7 @@
+<?php
+    include "data_base_conn.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +18,18 @@
     <title>Levi</title>
 </head>
 <body>
+<script src="message/message.js"></script>
     <?php
         include "navBar/navBar.php";
     ?>
     <div class="screen">
         <?php
-            include "repository/repository.php";
+            include "home/home.php";            
         ?>
+
     </div>
     <script src="navBar/navBar.js"></script>
     <script src="home/home.js"></script>
     <script src="main.js"></script>
-    <script src="message/message.js"></script>
 </body>
 </html>

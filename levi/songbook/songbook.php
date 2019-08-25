@@ -11,7 +11,7 @@
       die();
     }
     foreach ($contenido as $key => $line) {
-        echo $line . "<br>";
+        echo $line. "<br>";
     }
     }
 ?>

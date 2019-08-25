@@ -1,4 +1,11 @@
 function message(options) {
+    // option.titleTxt
+    // option.messageTxt
+    // option.input
+    // option.okButton
+    // option.cancelButton
+    // option.do -> Prommise to wait for
+    // option.wait -> Time untill auto close
     return new Promise((resolve, reject) => {
 
         //Creo los elementos
@@ -70,6 +77,15 @@ function message(options) {
             }).catch((response)=>{
                 console.log("Hubo un problema: " + response);
             });
+        }
+
+        if (typeof options.wait !== "undefined"){
+            setTimeout(()=>{
+                messageBox.style.animation = "disappear 0.4s";
+                messageBox.style.top = "-50vh";
+                setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
+                resolve(true);
+            }, options.wait);
         }
     });
 }

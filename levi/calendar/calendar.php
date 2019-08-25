@@ -26,15 +26,17 @@ for ($i = 0; $i < count($decodedCalendar); $i++){
 }
 
 foreach ($decodedCalendar as $key => $event) {
-  echo "<div class='tarjeta'>";
-  echo "<div class='tarjeta-titulo'>".$event["name"]."</div>";
-  echo "<div class='tarjeta-lista'>";
-  echo "<div class='tarjeta-lista-item'> <b>Dia:</b> ".date('Y/m/d', $event["timeToStart"]+time())."</div>";
-  echo "<div class='tarjeta-lista-item'> <b>Horario:</b> ".date('H:i', $event["timeToStart"]+time())."hs - ".date('H:i', $event["timeToEnd"]+time())."hs </div>";
-  echo "<div class='tarjeta-lista-item'> <b>Lugar:</b> ".$event["location"]."</div>";
-  echo "<div class='tarjeta-lista-item'> <b>Descripción:</b> ".$event["description"]."</div>";
-  echo "</div>";
-  echo "</div>";
+  if ($event["timeToStart"] > -3600){
+    echo "<div class='tarjeta'>";
+    echo "<div class='tarjeta-titulo'>".$event["name"]."</div>";
+    echo "<div class='tarjeta-lista'>";
+    echo "<div class='tarjeta-lista-item'> <b>Dia:</b> ".date('Y/m/d', $event["timeToStart"]+time())."</div>";
+    echo "<div class='tarjeta-lista-item'> <b>Horario:</b> ".date('H:i', $event["timeToStart"]+time())."hs - ".date('H:i', $event["timeToEnd"]+time())."hs </div>";
+    echo "<div class='tarjeta-lista-item'> <b>Lugar:</b> ".$event["location"]."</div>";
+    echo "<div class='tarjeta-lista-item'> <b>Descripción:</b> ".$event["description"]."</div>";
+    echo "</div>";
+    echo "</div>";
+  }
 }
 
 function decodeIcal($ical){
