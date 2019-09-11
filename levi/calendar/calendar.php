@@ -11,9 +11,13 @@ $opts = array(
 
 $context = stream_context_create($opts);
 
+//Hacemos un request al servidor de google calendar para obtener el archivo .ical
 $calendar = file_get_contents('https://calendar.google.com/calendar/ical/proyectolevioar%40gmail.com/public/basic.ics', false, $context);
 
+//Decodificamos el archivo
 $decodedCalendar = decodeIcal($calendar);
+
+//Los ordenamos del mas viejo al mas nuevo..
 $eventAux;
 for ($i = 0; $i < count($decodedCalendar); $i++){
   for ($j = 0; $j < count($decodedCalendar) ; $j++ ){
@@ -27,7 +31,7 @@ for ($i = 0; $i < count($decodedCalendar); $i++){
 
 foreach ($decodedCalendar as $key => $event) {
   if ($event["timeToStart"] > -3600){
-    echo "<div class='tarjeta'>";
+    echo "<div class='tarjeta' onclick='goToEvento()'>";
     echo "<div class='tarjeta-titulo'>".$event["name"]."</div>";
     echo "<div class='tarjeta-lista'>";
     echo "<div class='tarjeta-lista-item'> <b>Dia:</b> ".date('Y/m/d', $event["timeToStart"]+time())."</div>";
@@ -44,12 +48,28 @@ function decodeIcal($ical){
     $dataOfEvents = array();
     for ($i = 1; $i < count($events); $i++){
       $dataevent = explode("\n", $events[$i]);
-
-      $name        = explode(":",$dataevent[11])[1];
-      $timeToStart = (strtotime(explode(":",$dataevent[1])[1]) - time() - (60*60*3));
-      $timeToEnd   = (strtotime(explode(":",$dataevent[2])[1]) - time() - (60*60*3));
-      $description = explode(":",$dataevent[6])[1];
-      $location    = explode(":",$dataevent[8])[1];
+      foreach ($dataevent as $key => $descriptionData) {
+        $data = explode(":",$descriptionData);
+        switch ($data[0]){
+          case "DTSTART":
+          $timeToStart = (strtotime($data[1]) - time() - (60*60*3));
+          break;
+          case "DTEND":
+          $timeToEnd   = (strtotime($data[1]) - time() - (60*60*3));
+          break;
+          case "DESCRIPTION":
+          $description = $data[1];
+          break;
+          case "LOCATION":
+          $location = $data[1];
+          break;
+          case "SUMMARY":
+          $name = $data[1];
+          break;
+          default:
+          break;
+        }
+      }
 
       $event = array(
         "name"        => $name, 
@@ -58,6 +78,7 @@ function decodeIcal($ical){
         "description" => $description,
         "location"    => $location,
       );
+
       array_push($dataOfEvents,$event);
     }
     return $dataOfEvents;

@@ -23,5 +23,8 @@
         <div class="navBar-menu-block" onclick="navigateTo({name: 'Repositorio', url: 'repository/repository.php'})">
             <img src="navBar/repository.svg" class="navBar-menu-block-bubble">
         </div>
+        <div id="loginButton" class="navBar-menu-block">
+            <img src="navBar/padlock.png" class="navBar-menu-block-bubble">
+        </div>
     </div>
 </div>

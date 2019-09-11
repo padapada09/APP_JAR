@@ -51,10 +51,10 @@ Nuestra formación como joven JAR abarca todos los aspectos de nuestra vida. Por
 </div>
 
 <script>
-    options = {
-        'titleTxt': 'Hello ' + <?php echo "'".$user['Name']."'" ?>,
-        'messageTxt': 'Your email is: ' + <?php echo "'".$user['Mail']."'" ?>,
-        'wait' : 6000
-    };
-    message(options);
+    // options = {
+    //     'titleTxt': 'Hello ' + <?php echo "'".$user['Name']."'" ?>,
+    //     'messageTxt': 'Your email is: ' + <?php echo "'".$user['Mail']."'" ?>,
+    //     'wait' : 6000
+    // };
+    // message(options);
 </script>
