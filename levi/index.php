@@ -21,8 +21,8 @@
     <link rel="stylesheet" type="text/css" href="config.css">
     <link rel="stylesheet" type="text/css" href="calendar/calendar.css">
     <link rel="manifest" href="manifest.json">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="https://apis.google.com/js/api:client.js"></script>
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/api:client.js"></script> -->
     <title>Levi</title>
 </head>
 <body>
@@ -40,7 +40,7 @@
     <script src="home/home.js"></script>
     <script src="calendar/calendar.js"></script>
     <script src="main.js"></script>
-    <script>
+    <!-- <script>
     let client = function () {
             gapi.load('auth2', function(){
             auth2 = gapi.auth2.init({
@@ -57,6 +57,6 @@
             });
         });
     }
-    </script>
+    </script> -->
 </body>
 </html>

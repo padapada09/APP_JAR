@@ -6,7 +6,7 @@
             <div class="poster-post-comment"><b>Mariano Perez:</b> Muy buen posteo!! Seguro voy.</div>
             <div class="poster-post-comment"><b>Francisco Giancarelli:</b> Seguro va a ser malisimo. No voy ni a gancho.</div>
         </div>
-        <img class="poster-post-front" src="https://instagram.fsfn3-1.fna.fbcdn.net/vp/d79c3653e0007f24ffb1ec328dba20c7/5DDED4D5/t51.2885-15/e35/67672065_222761225354547_1485090688874524284_n.jpg?_nc_ht=instagram.fsfn3-1.fna.fbcdn.net">
+        <img class="poster-post-front" src="../test_assets/test_post_1.jpg">
     </div>
     <div class="poster-post-footer">
         <img src="home/like.png" onclick="alterLike(this)" class="poster-post-footer-button">
@@ -25,7 +25,7 @@ Nuestra formación como joven JAR abarca todos los aspectos de nuestra vida. Por
             <div class="poster-post-comment"><b>Mariano Perez:</b> Eu re copado, me re gusta. Me anoto!.</div>
             <div class="poster-post-comment"><b>Francisco Giancarelli:</b> Definitivamente va a ser malisimo. No voy ni a gancho.</div>
         </div>
-        <img class="poster-post-front" src="https://instagram.faep8-2.fna.fbcdn.net/vp/6240089bded5e5765f7b33c6c9da1c2e/5DCF77C3/t51.2885-15/e35/67033443_151978169241413_4649775666970927462_n.jpg?_nc_ht=instagram.faep8-2.fna.fbcdn.net">
+        <img class="poster-post-front" src="../test_assets/test_post_2.jpg">
     </div>
     <div class="poster-post-footer">
         <img src="home/like.png" onclick="alterLike(this)" class="poster-post-footer-button">
@@ -41,7 +41,7 @@ Nuestra formación como joven JAR abarca todos los aspectos de nuestra vida. Por
             <div class="poster-post-comment"><b>Mariano Perez:</b> Felicidades!! Nos vemos en la parroquia!.</div>
             <div class="poster-post-comment"><b>Francisco Giancarelli:</b> Altos boludos. Ojala no me los cruce.</div>
         </div>
-        <img class="poster-post-front" src="https://instagram.faep8-2.fna.fbcdn.net/vp/f9d761bdcf256ced75b57ed2be6eaa22/5DD85B47/t51.2885-15/e35/66964677_294687401324051_3621697751164936998_n.jpg?_nc_ht=instagram.faep8-2.fna.fbcdn.net">
+        <img class="poster-post-front" src="../test_assets/test_post_3.jpg">
     </div>
     <div class="poster-post-footer">
         <img src="home/like.png" onclick="alterLike(this)" class="poster-post-footer-button">
@@ -51,10 +51,10 @@ Nuestra formación como joven JAR abarca todos los aspectos de nuestra vida. Por
 </div>
 
 <script>
-    // options = {
-    //     'titleTxt': 'Hello ' + <?php echo "'".$user['Name']."'" ?>,
-    //     'messageTxt': 'Your email is: ' + <?php echo "'".$user['Mail']."'" ?>,
-    //     'wait' : 6000
-    // };
-    // message(options);
+    options = {
+        'titleTxt': 'Hello ' + <?php echo "'".$user['Name']."'" ?>,
+        'messageTxt': 'Your email is: ' + <?php echo "'".$user['Mail']."'" ?>,
+        'okButton' : true
+    };
+    message(options);
 </script>

@@ -1,6 +1,6 @@
 <div class="header">
     <div class="navBar">
-            <div class="navBar-title">Levi</div>
+            <div class="navBar-title"><?php echo $user['Name']?></div>
             <div class="navBar-sandwich" onclick="alterMenu()">            
                 <div class="sandwich-line1"></div>
                 <div class="sandwich-line2"></div>
@@ -23,8 +23,8 @@
         <div class="navBar-menu-block" onclick="navigateTo({name: 'Repositorio', url: 'repository/repository.php'})">
             <img src="navBar/repository.svg" class="navBar-menu-block-bubble">
         </div>
-        <div id="loginButton" class="navBar-menu-block">
+        <!-- <div id="loginButton" class="navBar-menu-block">
             <img src="navBar/padlock.png" class="navBar-menu-block-bubble">
-        </div>
+        </div> -->
     </div>
 </div>

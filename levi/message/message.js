@@ -11,7 +11,7 @@ function message(options) {
         //Creo los elementos
         let messageBox = document.createElement("div");
         let messageInterfaze = [];
-        let title, message, input, okButton, cancelButton;
+        let title, message, input, okButton, cancelButton, buttons_container;
         if (typeof options.titleTxt !== "undefined") {
             title = document.createElement("header");
             title.innerHTML = options.titleTxt;
@@ -26,15 +26,23 @@ function message(options) {
             input = document.createElement("input");
             messageInterfaze.push(input);
         }
-        if (typeof options.okButton !== "undefined" && options.okButton == true){
-            okButton = document.createElement("button");
-            okButton.innerHTML = "Aceptar";
-            messageInterfaze.push(okButton);
-        }
-        if (typeof options.cancelButton !== "undefined" && options.cancelButton == true){
-            cancelButton = document.createElement("button");
-            cancelButton.innerHTML = "Cancelar";
-            messageInterfaze.push(cancelButton);
+        if (typeof options.okButton !== "undefined" && options.okButton == true || typeof options.cancelButton !== "undefined" && options.cancelButton == true)
+        {
+            buttons_container = document.createElement("div");
+            buttons_container.className = "messageBox-buttons";
+            messageInterfaze.push(buttons_container);
+            if (typeof options.okButton !== "undefined" && options.okButton == true){
+                okButton = document.createElement("button");
+                okButton.className = "touchable";
+                okButton.innerHTML = "Aceptar";
+                buttons_container.appendChild(okButton);
+            }
+            if (typeof options.cancelButton !== "undefined" && options.cancelButton == true){
+                cancelButton = document.createElement("button");
+                cancelButton.className = "touchable";
+                cancelButton.innerHTML = "Cancelar";
+                buttons_container.appendChild(cancelButton);
+            } 
         }
         
         //Los conecto entre sí, y con el documento
@@ -46,23 +54,26 @@ function message(options) {
         //Le asigno la clase
         messageBox.className = "messageBox";
 
+        //Le ajusto la animación de entrada de acuerdo a la altura del mensaje
+        messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
+        messageBox.style.transition = "top 0.5s ease-in-out";
+        setTimeout(()=>{messageBox.style.top = "0vh";},10);
+
         if (typeof options.okButton !== "undefined" && options.okButton == true){
+            
             okButton.addEventListener("click",() => {
                 let userTxtResponse = true;
                 if (typeof options.input !== "undefined" && options.input == true) {
                     userTxtResponse = input.value;
                 }
-                messageBox.style.animation = "disappear 0.4s";
-                messageBox.style.top = "-50vh";
+                messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 resolve(userTxtResponse);
             });
         }
-
-        if (typeof options.okButton !== "undefined" && options.okButton == true){
+        if (typeof options.cancelButton !== "undefined" && options.cancelButton == true){
             cancelButton.addEventListener("click", ()=> {
-                messageBox.style.animation = "disappear 0.4s";
-                messageBox.style.top = "-50vh";
+                messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 reject(false);
             });
@@ -70,8 +81,7 @@ function message(options) {
 
         if (typeof options.do !== "undefined"){
             options.do().then((response)=>{
-                messageBox.style.animation = "disappear 0.4s";
-                messageBox.style.top = "-50vh";
+                messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 resolve(response);
             }).catch((response)=>{
@@ -81,11 +91,21 @@ function message(options) {
 
         if (typeof options.wait !== "undefined"){
             setTimeout(()=>{
-                messageBox.style.animation = "disappear 0.4s";
-                messageBox.style.top = "-50vh";
+                messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 resolve(true);
             }, options.wait);
         }
     });
 }
+
+// function touch(button, x, y, start)
+// {
+//     return new Promise((resolve, rejetct) => {
+//         if (button.style.background !== "rgb(150,150,150)")
+//         {
+            
+//         }
+//         window.requestAnimationFrame
+//     });
+// }

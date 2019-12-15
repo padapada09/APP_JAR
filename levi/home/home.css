@@ -17,7 +17,7 @@
     position: relative;
     width: 100%;
     height: auto;
-    min-height: 40vh;
+    min-height: 10vh;
     margin: 0%;
     padding: 0%;
     transition: opacity 0.2s ease-in-out;
