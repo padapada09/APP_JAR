@@ -24,15 +24,15 @@ function closePosts(){
 }
 
 function alterLike(heart){
-    if (heart.src == window.location.origin + "/home/like.png"){        
-        heart.src = "home/liked.png";
+    if (heart.src == window.location.origin + "/home/like.svg"){        
+        heart.src = "home/liked.svg";
         let options = {
             titleTxt: "Que bueno que te guste!",
             wait: 1000 
         }
         message(options);
     }else{        
-        heart.src = "home/like.png";
+        heart.src = "home/like.svg";
         let options = {
             titleTxt: "Buuu!",
             wait: 1000 

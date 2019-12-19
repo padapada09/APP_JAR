@@ -1,11 +1,9 @@
 <?php
     include "data_base_conn.php";
 ?>
-
 <!-- 303557994897-gv7is313ue78kdv59lpfmpcbd31aj5f6.apps.googleusercontent.com client ID-->
 
 <!-- _Jk4Fy6DixwtsuQO4uWPudOz client Secret -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +18,19 @@
     <link rel="stylesheet" type="text/css" href="message/message.css">
     <link rel="stylesheet" type="text/css" href="config.css">
     <link rel="stylesheet" type="text/css" href="calendar/calendar.css">
+    <link rel="stylesheet" type="text/css" href="songbook/songbook.css">
     <link rel="manifest" href="manifest.json">
     <!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/api:client.js"></script> -->
     <title>Levi</title>
 </head>
 <body>
+<script>
+    let height = window.innerHeight;
+    let width = window.innerWidth;
+    document.documentElement.style.setProperty("--vh",height/100.0+"px");
+    document.documentElement.style.setProperty("--vw",width/100.0+"px");
+</script>
 <script src="message/message.js"></script>
     <?php
         include "navBar/navBar.php";
@@ -39,6 +44,7 @@
     <script src="navBar/navBar.js"></script>
     <script src="home/home.js"></script>
     <script src="calendar/calendar.js"></script>
+    <script src="songbook/songbook.js"></script>
     <script src="main.js"></script>
     <!-- <script>
     let client = function () {

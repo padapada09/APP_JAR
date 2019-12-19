@@ -1,13 +1,10 @@
 .messageBox{
     position: fixed;
-    /* top: 0vh; */
-    left: 0vw;
-    width: 100vw;
+    left: calc(0*var(--vw));
+    width: calc(100*var(--vw));
     height: auto;
     background: white;
     box-shadow: 2px 2px 5px grey;
-    /* animation: appear 0.5s; */
-    /* transition: top 0.5s ease-in-out; */
     z-index: 11;
 }
 
@@ -15,17 +12,21 @@
     width: 90%;
     height: auto;
     padding: 5%;
-    font-size: 3vh;
+    font-size: calc(3*var(--vh));
 }
 
 .messageBox p{
     margin: 0;
     width: 90%;
     height: auto;
-    max-height: 30vh;
+    max-height: calc(30*var(--vh));
     overflow: scroll;
     padding: 5%;
-    font-size: 2vh;
+    font-size: calc(2*var(--vh));
+}
+
+.messageBox img{
+    width: 100%;
 }
 
 .messageBox input{
@@ -37,7 +38,20 @@
     background: rgb(0, 0, 0);
     color: white;
     box-sizing: border-box;
-    font-size: 3vh;
+    font-size: calc(3*var(--vh));
+}
+
+.messageBox .fixedInputContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 96%;
+    margin: 2%;
+}
+
+.messageBox .fixedInput{
+    padding: calc(1 * var(--vh));
+    margin: calc(0.4 * var(--vh));
+    border-radius: calc(1 * var(--vh));
 }
 
 .messageBox-buttons{
@@ -48,8 +62,8 @@
 .messageBox button{
     all: unset;
     position: relative;
-    font-size: 3vh;
-    padding: 1vh;
+    font-size: calc(3*var(--vh));
+    padding: calc(1*var(--vh));
     flex: 1;
     float: right;
     box-sizing: border-box;

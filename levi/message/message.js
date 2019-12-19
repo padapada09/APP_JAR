@@ -1,6 +1,7 @@
 function message(options) {
     // option.titleTxt
     // option.messageTxt
+    // option.img
     // option.input
     // option.okButton
     // option.cancelButton
@@ -11,7 +12,7 @@ function message(options) {
         //Creo los elementos
         let messageBox = document.createElement("div");
         let messageInterfaze = [];
-        let title, message, input, okButton, cancelButton, buttons_container;
+        let title, message, input, img ,okButton, cancelButton, buttons_container;
         if (typeof options.titleTxt !== "undefined") {
             title = document.createElement("header");
             title.innerHTML = options.titleTxt;
@@ -22,8 +23,18 @@ function message(options) {
             message.innerHTML = options.messageTxt; 
             messageInterfaze.push(message);
         }
+        if (typeof options.img !== "undefined") {
+            img = document.createElement("img");
+            img.onload = ()=>{
+                messageBox.style.top = "calc(-" + ((messageBox.clientHeight/window.innerHeight)*100+1) + "*var(--vh))";
+                messageBox.style.transition = "top 0.5s ease-in-out";
+                setTimeout(()=>{messageBox.style.top = "calc(0*var(--vh))";},100);
+            }
+            img.src = options.img;
+            messageInterfaze.push(img);
+        }
         if (typeof options.input !== "undefined" && options.input == true) {
-            input = document.createElement("input");
+            input = document.createElement("input");            
             messageInterfaze.push(input);
         }
         if (typeof options.okButton !== "undefined" && options.okButton == true || typeof options.cancelButton !== "undefined" && options.cancelButton == true)
@@ -54,10 +65,15 @@ function message(options) {
         //Le asigno la clase
         messageBox.className = "messageBox";
 
-        //Le ajusto la animación de entrada de acuerdo a la altura del mensaje
-        messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
-        messageBox.style.transition = "top 0.5s ease-in-out";
-        setTimeout(()=>{messageBox.style.top = "0vh";},10);
+        if (typeof options.img !== "undefined"); //Si tiene imagen, muestro la tarjeta recien cuando se carga la imagen
+        else{
+            //De otro modo, cargo la tarjeta ni bien puedo
+            //Le ajusto la animación de entrada de acuerdo a la altura del mensaje
+            //Le sumo uno, pq si no me muestra el borde inferior
+            messageBox.style.top = "calc(-" + ((messageBox.clientHeight/window.innerHeight)*100+1) + "*var(--vh))";
+            messageBox.style.transition = "top 0.5s ease-in-out";
+            setTimeout(()=>{messageBox.style.top = "calc(0*var(--vh))";},50);
+        }
 
         if (typeof options.okButton !== "undefined" && options.okButton == true){
             
@@ -66,14 +82,14 @@ function message(options) {
                 if (typeof options.input !== "undefined" && options.input == true) {
                     userTxtResponse = input.value;
                 }
-                messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
+                messageBox.style.top = "calc(-" + ((messageBox.clientHeight/window.innerHeight)*100+1) + "*var(--vh))";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 resolve(userTxtResponse);
             });
         }
         if (typeof options.cancelButton !== "undefined" && options.cancelButton == true){
             cancelButton.addEventListener("click", ()=> {
-                messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
+                messageBox.style.top = "calc(-" + ((messageBox.clientHeight/window.innerHeight)*100+1) + "*var(--vh))";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 reject(false);
             });
@@ -81,7 +97,7 @@ function message(options) {
 
         if (typeof options.do !== "undefined"){
             options.do().then((response)=>{
-                messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
+                messageBox.style.top = "calc(-" + ((messageBox.clientHeight/window.innerHeight)*100+1) + "*var(--vh))";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 resolve(response);
             }).catch((response)=>{
@@ -91,21 +107,16 @@ function message(options) {
 
         if (typeof options.wait !== "undefined"){
             setTimeout(()=>{
-                messageBox.style.top = "-" + (messageBox.clientHeight/window.innerHeight)*100 + "vh";
+                messageBox.style.top = "calc(-" + ((messageBox.clientHeight/window.innerHeight)*100+1) + "*var(--vh))";
                 setTimeout(()=>{messageBox.outerHTML = "";}, 1000);
                 resolve(true);
             }, options.wait);
         }
+
+        if (options.input)
+        {
+            input.focus();
+            input.addEventListener("keydown",(key)=>{if (key.keyCode == 13) okButton.click();});
+        }
     });
 }
-
-// function touch(button, x, y, start)
-// {
-//     return new Promise((resolve, rejetct) => {
-//         if (button.style.background !== "rgb(150,150,150)")
-//         {
-            
-//         }
-//         window.requestAnimationFrame
-//     });
-// }

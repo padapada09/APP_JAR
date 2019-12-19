@@ -6,12 +6,12 @@
             <div class="poster-post-comment"><b>Mariano Perez:</b> Muy buen posteo!! Seguro voy.</div>
             <div class="poster-post-comment"><b>Francisco Giancarelli:</b> Seguro va a ser malisimo. No voy ni a gancho.</div>
         </div>
-        <img class="poster-post-front" src="../test_assets/test_post_1.jpg">
+        <img class="poster-post-front" src="../test_assets/test_post_1_preview.jpg" onload="this.src='../test_assets/test_post_1.jpg'; this.onload=''">
     </div>
     <div class="poster-post-footer">
-        <img src="home/like.png" onclick="alterLike(this)" class="poster-post-footer-button">
-        <img src="home/share.png" class="poster-post-footer-button">
-        <img src="home/comment.png" onclick="comment()" class="poster-post-footer-button">
+        <img src="home/like.svg" onclick="alterLike(this)" class="poster-post-footer-button">
+        <img src="home/share.svg" class="poster-post-footer-button">
+        <img src="home/comment.svg" onclick="comment()" class="poster-post-footer-button">
     </div>
 </div>
 <div class="poster">
@@ -25,12 +25,12 @@ Nuestra formación como joven JAR abarca todos los aspectos de nuestra vida. Por
             <div class="poster-post-comment"><b>Mariano Perez:</b> Eu re copado, me re gusta. Me anoto!.</div>
             <div class="poster-post-comment"><b>Francisco Giancarelli:</b> Definitivamente va a ser malisimo. No voy ni a gancho.</div>
         </div>
-        <img class="poster-post-front" src="../test_assets/test_post_2.jpg">
+        <img class="poster-post-front" src="../test_assets/test_post_2_preview.jpg" onload="this.src='../test_assets/test_post_2.jpg'; this.onload=''">
     </div>
     <div class="poster-post-footer">
-        <img src="home/like.png" onclick="alterLike(this)" class="poster-post-footer-button">
-        <img src="home/share.png" class="poster-post-footer-button">
-        <img src="home/comment.png" onclick="comment()" class="poster-post-footer-button">
+        <img src="home/like.svg" onclick="alterLike(this)" class="poster-post-footer-button">
+        <img src="home/share.svg" class="poster-post-footer-button">
+        <img src="home/comment.svg" onclick="comment()" class="poster-post-footer-button">
     </div>
 </div>
 <div class="poster">
@@ -41,12 +41,12 @@ Nuestra formación como joven JAR abarca todos los aspectos de nuestra vida. Por
             <div class="poster-post-comment"><b>Mariano Perez:</b> Felicidades!! Nos vemos en la parroquia!.</div>
             <div class="poster-post-comment"><b>Francisco Giancarelli:</b> Altos boludos. Ojala no me los cruce.</div>
         </div>
-        <img class="poster-post-front" src="../test_assets/test_post_3.jpg">
+        <img class="poster-post-front" src="../test_assets/test_post_3_preview.jpg" onload="this.src='../test_assets/test_post_3.jpg'; this.onload=''">
     </div>
     <div class="poster-post-footer">
-        <img src="home/like.png" onclick="alterLike(this)" class="poster-post-footer-button">
-        <img src="home/share.png" onclick="sharePost()" class="poster-post-footer-button">
-        <img src="home/comment.png" onclick="comment()" class="poster-post-footer-button">
+        <img src="home/like.svg" onclick="alterLike(this)" class="poster-post-footer-button">
+        <img src="home/share.svg" onclick="sharePost()" class="poster-post-footer-button">
+        <img src="home/comment.svg" onclick="comment()" class="poster-post-footer-button">
     </div>
 </div>
 

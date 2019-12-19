@@ -1,8 +1,8 @@
 .header{
     position: sticky;
     top: 0;
-    width: 100vw;
-    height: 10vh;
+    width: calc(100*var(--vw));
+    height: calc(10*var(--vh));
     overflow: visible;
     z-index: 10;
     box-shadow: 0px 4px 4px rgba(5, 5, 68, 0.514);
@@ -20,8 +20,8 @@
     position: absolute;
     top: 10%;
     height: 80%;
-    width: calc(100% - 10vh);
-    font-size: 5.5vh;
+    width: calc(100% - calc(10*var(--vh)));
+    font-size: calc(5.5*var(--vh));
     text-indent: 3%;
     color: white; 
 }
@@ -38,18 +38,20 @@
 .navBar-menu-block{
     position: relative;
     flex: 1;
-    height: 9vh;
+    height: calc(9*var(--vh));
+    overflow: visible;
     text-align: center;
+    top: 0;
+    transition: all 0.1s ease-in-out;
 }
 
 .navBar-menu-block-bubble{
     position: absolute;
-    top: -9vh;
-    left: calc(calc(100% - 7vh) / 2);
-    height: 7vh;
-    width: 7vh;
-    background: white;
-    border-radius: 50%;
+    top: 0;
+    left: 0;
+    padding: 10%;
+    height: 80%;
+    width: 80%;
     transition: all 0.1s ease-in-out;
 }
 
@@ -57,10 +59,10 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 7vh;
-    width: 7vh;
+    height: calc(7*var(--vh));
+    width: calc(7*var(--vh));
     background: white;
-    margin: 1.5vh;
+    margin: calc(1.5*var(--vh));
     border-radius: 50%;
     border: 2px solid rgb(219, 31, 62);
     transition: transform 0.2s ease-in-out;
