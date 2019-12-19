@@ -1,0 +1,16 @@
+.screen{
+    position: relative;
+    height: calc(90*var(--vh));
+    width: calc(100*var(--vw));
+    overflow: scroll;
+}
+
+.superboton{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    height: 50px;
+    width: 50px;
+    background: grey;
+    z-index: 11;
+}
