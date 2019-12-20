@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "Atleticcrai97";
+$password = "atleticcrai97";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
@@ -11,9 +11,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$query = "SELECT * FROM levi_db.user WHERE id = 1;";
+$query = "SELECT * FROM levi_db.users WHERE id = 1;";
 
 $result = mysqli_query($conn,$query);
+
+if (!$result) echo $conn -> error;
 
 $user = mysqli_fetch_assoc($result);
 
